@@ -7,7 +7,6 @@ services:
 
 # Pre-testing installs
 install:
-  - echo "Docker user is $DOCKER_USERNAME"
   - echo "installing kubernetes CLI"
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
@@ -29,8 +28,8 @@ after_success:
   - echo "build successful, pushing images to Registry"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   #   - docker push YOUR_DOCKER_HUB/simple-node
-  # - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml push
-  - docker push torhector2/reverseproxy
-  - docker push torhector2/udacity-restapi-user
-  - docker push torhector2/udacity-restapi-feed
-  - docker push torhector2/udacity-frontend:local
+  - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml push
+  # - docker push torhector2/reverseproxy
+  # - docker push torhector2/udacity-restapi-user
+  # - docker push torhector2/udacity-restapi-feed
+  # - docker push torhector2/udacity-frontend:local
