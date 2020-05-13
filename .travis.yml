@@ -21,11 +21,11 @@ script:
   #   - docker build -t simple-node .
   #   - docker tag simple-node YOUR_DOCKER_HUB/simple-node:latest
   ##
-  - docker-compose -f docker-compose-build.yaml build --parallel
+  - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
   - echo "build successful, pushing images to Registry"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   #   - docker push YOUR_DOCKER_HUB/simple-node
-  - docker-compose -f docker-compose-build.yaml push
+  - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml push
