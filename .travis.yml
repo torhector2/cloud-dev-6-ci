@@ -28,4 +28,8 @@ after_success:
   - echo "build successful, pushing images to Registry"
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   #   - docker push YOUR_DOCKER_HUB/simple-node
-  - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml push
+  # - docker-compose -f ./udacity-c3-deployment/docker/docker-compose-build.yaml push
+  - docker push torhector2/reverseproxy
+  - docker push torhector2/udacity-restapi-user
+  - docker push torhector2/udacity-restapi-feed
+  - docker push torhector2/udacity-frontend:local
