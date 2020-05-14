@@ -43,14 +43,14 @@ after_success:
   - aws eks --region eu-west-3 update-kubeconfig --name Demo2
 
   #kubernetes
-  - kubectl apply -f ./udacity-c3-deployment/aws-secret.yaml
-  - kubectl apply -f ./udacity-c3-deployment/env-secret.yaml
-  - kubectl apply -f ./udacity-c3-deployment/env-configmap.yaml
-  - kubectl apply -f ./udacity-c3-deployment/backend-feed-deployment.yaml
-  - kubectl apply -f ./udacity-c3-deployment/backend-feed-service.yaml
-  - kubectl apply -f ./udacity-c3-deployment/backend-user-deployment.yaml
-  - kubectl apply -f ./udacity-c3-deployment/backend-user-service.yaml
-  - kubectl apply -f ./udacity-c3-deployment/frontend-deployment.yaml
-  - kubectl apply -f ./udacity-c3-deployment/frontend-service.yaml
-  - kubectl apply -f ./udacity-c3-deployment/reverseproxy-deployment.yaml
-  - kubectl apply -f ./udacity-c3-deployment/reverseproxy-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/aws-secret.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/env-secret.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/env-configmap.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/backend-feed-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/backend-feed-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/backend-user-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/backend-user-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/frontend-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/frontend-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/reverseproxy-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/k8s/reverseproxy-service.yaml
