@@ -34,6 +34,9 @@ after_success:
   # - docker push torhector2/udacity-restapi-feed
   # - docker push torhector2/udacity-frontend:local
 
+  #aws eks
+  - aws eks --region eu-west-3 update-kubeconfig --name Demo2
+
   #kubernetes
   - kubectl apply -f ./udacity-c3-deployment/aws-secret.yaml
   - kubectl apply -f ./udacity-c3-deployment/env-secret.yaml
