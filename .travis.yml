@@ -33,3 +33,16 @@ after_success:
   # - docker push torhector2/udacity-restapi-user
   # - docker push torhector2/udacity-restapi-feed
   # - docker push torhector2/udacity-frontend:local
+
+  #kubernetes
+  - kubectl apply -f ./udacity-c3-deployment/aws-secret.yaml
+  - kubectl apply -f ./udacity-c3-deployment/env-secret.yaml
+  - kubectl apply -f ./udacity-c3-deployment/env-configmap.yaml
+  - kubectl apply -f ./udacity-c3-deployment/backend-feed-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/backend-feed-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/backend-user-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/backend-user-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/frontend-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/frontend-service.yaml
+  - kubectl apply -f ./udacity-c3-deployment/reverseproxy-deployment.yaml
+  - kubectl apply -f ./udacity-c3-deployment/reverseproxy-service.yaml
