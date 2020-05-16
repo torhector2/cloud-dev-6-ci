@@ -3,16 +3,16 @@ services:
   reverseproxy:
     build:
       context: .
-    image: torhector2/reverseproxy:1
+    image: torhector2/reverseproxy:2
   backend_user:
     build:
       context: ../../udacity-c3-restapi-user
-    image: torhector2/udacity-restapi-user:1
+    image: torhector2/udacity-restapi-user:2
   backend_feed:
     build:
       context: ../../udacity-c3-restapi-feed
-    image: torhector2/udacity-restapi-feed:1
+    image: torhector2/udacity-restapi-feed:2
   frontend:
     build:
       context: ../../udacity-c3-frontend
-    image: torhector2/udacity-frontend:1
+    image: torhector2/udacity-frontend:2
